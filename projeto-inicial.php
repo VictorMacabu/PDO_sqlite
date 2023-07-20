@@ -10,4 +10,5 @@ $student = new Student(
     new \DateTimeImmutable('1997-10-15')
 );
 
-echo $student->age();
+echo $student->age() . PHP_EOL;
+
