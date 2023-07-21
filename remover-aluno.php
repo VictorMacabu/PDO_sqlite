@@ -1,9 +1,10 @@
 <?php
 
+use Alura\Pdo\Ifrastructure\Persistence\ConnectionCreator;
+
 require_once 'vendor/autoload.php';
 
-$databasePath = __DIR__ . '/banco.sqlite';
-$pdo = new PDO('sqlite:' . $databasePath);
+$pdo = ConnectionCreator::createConection();
 
 $preparedStatement = $pdo->prepare('DELETE FROM students WHERE id = ?;');
 $preparedStatement->bindValue(1,6, PDO::PARAM_INT);
